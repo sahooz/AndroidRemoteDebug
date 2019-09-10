@@ -141,7 +141,7 @@ Java_com_sahooz_jdwp_MainActivity_replaceDebug(
     __android_log_print(ANDROID_LOG_DEBUG,TAG , "Handshake reply: %s" ,recvbuf);
     memset(recvbuf, 0, sizeof(recvbuf));
 
-    char version[11] = {
+    char version[10] = {
         0, 0, 11,
         0, 0, 1, 1,
         0,
@@ -149,7 +149,7 @@ Java_com_sahooz_jdwp_MainActivity_replaceDebug(
         1
     };
 
-    send(sock_cli, version, 11, 0);
+    send(sock_cli, version, 10, 0);
     LOGD("Sent version cmd");
     size = recv(sock_cli, recvbuf, sizeof(recvbuf), 0); ///接收
     __android_log_print(ANDROID_LOG_DEBUG,TAG , "Version reply: %s", bytestohexstring(recvbuf, size).c_str());
