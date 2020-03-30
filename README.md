@@ -1,6 +1,6 @@
 ## 概述
 1. 主要工作： 把Java调试传输模式设置为kJdwpTransportSocket，通过socket转发调试指令和回复信息    
-2. 主要问题： Command packet与协议定义的似乎对应: ，以获取版本指令为例：
+2. 主要问题： Command packet与协议定义的似乎不对应: ，以获取版本指令为例：
 ``` c
 char version[11] = {
         0, 0, 0, 11,
